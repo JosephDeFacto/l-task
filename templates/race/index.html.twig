@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Races{% endblock %}
+
+{% block body %}
+    <div class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Race Name</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for race in races %}
+                    <tr>
+                        <td>{{ race.raceName }}</td>
+                        <td>{{ race.date.format('Y-m-d') }}</td>
+                        <td><a href="{{ path('app_race_show', {id: race.id}) }}">Show</a><br></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

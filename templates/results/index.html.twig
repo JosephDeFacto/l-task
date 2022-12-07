@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Results{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="link-box">
+            <a href="{{ path('app_race_new') }}">Import Results</a>
+        </div>
+
+        <div class="text-center">
+            <h2>{{ race.raceName }}</h2>
+            <h4>Date: {{ race.date.format('Y-m-d') }}</h4>
+        </div>
+
+        {% include 'results/medium.html.twig' %}
+        <hr>
+        {% include 'results/long.html.twig' %}
+    </div>
+
+{% endblock %}

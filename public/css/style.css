@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+h2, h4, p {
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.link-box, a {
+    text-align: center;
+    text-decoration: none;
+    color: darkolivegreen;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tbody {
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+}
+
+.text-center {
+    margin-top: 10px;
+}
+
+hr {
+    border: 2px solid #cacaca;
+    margin-top: 20px;
+}

@@ -1,0 +1,36 @@
+<div class="sub-content">
+    {% if results is not defined %}
+        <p><b>Medium distance</b></p>
+        <p>No data</p>
+    {% else %}
+        <p><b>Medium distance</b></p>
+        <p>Average: {{ medium|trim(0) }}</p>
+    {% endif %}
+</div>
+<div class="main-content">
+    <table>
+        <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Finish Time</th>
+            <th>Placement</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for result in results %}
+            {% if result.distance == 'medium' %}
+                <tr>
+                    <td>{{ result.full_name }}</td>
+                    <td>{{ result.race_time }}</td>
+                    <td>{{ result.placement }}</td>
+                    <td><a href="{{ path('app_results_edit', {id: result.id}) }}">Edit</a></td>
+                </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="6">No data found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
